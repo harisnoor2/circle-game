@@ -4,21 +4,60 @@
     <head>
 
         <meta charset="utf-8"/>
-        <title>pay attention and click</title>
+        <title>watch the dot</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
         <link rel="stylesheet" href="styles.css">
         <script defer src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel = "stylesheet">
     </head>
 
     <body>
+        <h1>watch the dot</h1>
 
-        <h1>Click to Start</h1>
+        <div class = "container">
+            <div class = "instructions">
+                <h1>instructions</h1>
+                <p>when you click start, a blue dot starts making rounds around the dotted circle</p>
+                <p>occasionally (~15s by default) the circle does a double jump. that is, it skips one of the red circles</p>
+                <p>when that happens, you must click the "double jump" button within a second to gain a point</p>
+                <p>clicking outside of this one second interval or multiple times within the interval loses you point(s)</p>
+                <p>there are settings on the right that control the number of dots, speed, size, and (approximate) skip interval</p>
+                <p>the skip interval setting does not strictly set the double jump to time intervals, it only sets the probability of a skip to occur around that time interval</p>
+            </div>
 
-        <div class = "circle"></div>
-        <div class = "dot"></div>
-        <button>Click when double jump</button>
-        <div id = "score">score</div>
+            <div class = "game">
+                <div id = "circle"></div>
+                <button id = "doubleJump">double jump</button>
+                <div id = "scoreDisplay"><strong>0/0</strong></div>
+            </div>
 
+            <div class="settings">
+                <h1>settings</h1>
+                <div>
+                    <label for="skipInterval">skip interval (s): <span id="skipIntervalVal">15</span></label>
+                    <input type="range" id="skipInterval" min="5" max="30" value="15" step="5">
+                </div>
+                <div>
+                    <label for="numDots">number of dots: <span id="numDotsVal">100</span></label>
+                    <input type="range" id="numDots" min="10" max="500" value="100" step="10">
+                </div>
+                <div>
+                    <label for="speedDots">speed (ms): <span id="speedDotsVal">300</span></label>
+                    <input type="range" id="speedDots" min="100" max="2000" value="300" step="100">
+                </div>
+                <div>
+                    <label for="sizeDots">size (px): <span id="sizeDotsVal">10</span></label>
+                    <input type="range" id="sizeDots" min="1" max="160" value="10" step="1">
+                </div>
+                <div>
+                    <label for="toggleSize">auto-size dots to fit on circumference</label>
+                    <input type="checkbox" id="toggleSize">
+                </div>
+
+                <button id = "toggleGame">start/stop</button>
+
+            </div>
+        </div>
     </body>
 
 </html>

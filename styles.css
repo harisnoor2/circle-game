@@ -1,34 +1,108 @@
-
-html body{
+html {
+    background: linear-gradient(rgb(150, 136, 136), aquamarine);
+    background-attachment: fixed;
+    font-family: "Roboto";
     height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 25% 50% 25%;
+    flex: 1;
+}
+
+.game {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: initial;
+    place-content: center flex-start;
+    align-items: center;
+}
+
+#toggleGame {
+    padding: 20px 50px 20px 50px;
+    border-radius: 20px;
 
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: linear-gradient(white, gray);
+#doubleJump {
+    margin:30px;
+    padding: 20px 50px 20px 50px;
+    border-radius: 20px;
+
+}
+.instructions {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: initial;
+    place-content: center flex-start;
+    align-items: strech;
 }
 
-body > * {
-    border: 2px solid red
+.instructions > * {
+    padding-bottom: 10px;
+    padding-left: 30px;
 }
 
-.circle {
-    width: 500px;
+.instructions > p::before {
+  content: "\2728";
+}
+
+.settings {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: initial;
+    place-content: center flex-start;
+    align-items: center;
+}
+
+.settings > * {
+  padding-bottom: 50px;
+}
+
+
+#circle {
     height: 500px;
-    border: 10px dotted black;
+    aspect-ratio: 1/1;
     border-radius: 50%;
+    position: relative;
+    margin: 60px;
 }
 
 .dot {
-    width: 5px;
-    height: 5px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
+    background: red;
+    translate: -50% -50%;
+    position: absolute;
 }
 
+footer {
+    text-align: center;
+}
+
+#toggleGame, #doubleJump {
+    background-color: black;
+    color: aliceblue;
+    font-size: 16px;
+    border: 0px;
+}
+
+#toggleGame:hover, #doubleJump:hover {
+    transform: scale(1.05);
+    transition: transform 0.1s linear 0ms;
+}
+
+#toggleGame:active, #doubleJump:active {
+    transform: scale(0.95);
+    transition: transform 0.1s linear 0ms;
+}
+
+#scoreDisplay {
+    font-size: 30px;
+}
